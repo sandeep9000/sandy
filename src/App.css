@@ -17,6 +17,15 @@
 .App-intro {
   font-size: large;
 }
+body {
+    background-color: white;
+}
+h1 {
+    color: blue;
+}
+p {
+    color: red;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
