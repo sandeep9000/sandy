@@ -19,18 +19,62 @@ var App = React.createClass({
 
 
 
+  Const  MyList =  this.state.data;{
+    var b =data.list[2];
 
+    if(b)
+
+      {
+    var i = Math.round(b.main.temp) -273;
+    var j= Math.round(b.main.temp_max) -273;
+    var r =Math.round(b.main.temp_min) -273;
+    var s=b.wind.speed;
+    var t=b.wind.deg;
+    }
+    return(  Day 1:
+<p>Date {n}</p>
+    <p><b>Temperature:</b>{i}°C</p>
+     <p><b>Temperature max:</b>{j}°C</p>
+    <p> <b>Temperature min:</b>{r}°C</p>
+    <p> <b>Wind speed:</b>{s}</p>
+     <p> <b>Wind Degree:</b>{t}</p>
+)
+  }
+
+
+
+  //  if (msgList === undefined) {
+      //return <span>Nothing in list</span>
+  //  }
+
+  //  return (
+    //  <ul>
+      //  {msgList.map(item => {
+      //    return <li>{item}</li>
+    //    })}
+    //  </ul>
+    //)
   render: function() {
     var data = this.state.data;
     var a = data.list[3];
     var b =data.list[2];
     var h  =data.list[4];
+
+    var list = <ol>
+       {this.state.data.list.map((result) => (
+         <li key={result.id}>{result.text}</li>
+         //<ul> {this.state.data.list.map(x =>
+        //  <li key={x.id}>{x.id}</li>
+        // )}</ul>
+
+       ))}
+     </ol>
     if(h)
 
       {
-    var i = b.main.temp;
-    var j= b.main.temp_max;
-    var r =b.main.temp_min;
+    var i = Math.round(b.main.temp) -273;
+    var j= Math.round(b.main.temp_max) -273;
+    var r =Math.round(b.main.temp_min) -273;
     var s=b.wind.speed;
     var t=b.wind.deg;
     }
@@ -39,19 +83,20 @@ var App = React.createClass({
     if(b)
 
       {
-    var c = b.main.temp;
-    var d= b.main.temp_max;
-    var e =b.main.temp_min;
+      var n =b.dt_txt;
+    var c = Math.round(b.main.temp) -273;
+    var d= Math.round (b.main.temp_max)-273;
+    var e =Math.round(b.main.temp_min)-273;
     var f=b.wind.speed;
     var g=b.wind.deg;
   }
 
 
     if(a)
-
-      {var k = a.main.temp;
-      var p = a.main.temp_max;
-      var m =a.main.temp_min;
+//var r =a.dt_txt;
+      {var k =  Math.round(a.main.temp) - 273;
+      var p = Math.round (a.main.temp_max) -273;
+      var m =Math.round(a.main.temp_min) -273;
       var w=a.wind.speed;
       var y=a.wind.deg;
     }
@@ -61,23 +106,25 @@ var App = React.createClass({
         <p><i>{this.state.data.message}</i></p>
 
         Day 1:
-      <p><b>Temperature:</b>{i}</p>
-       <p><b>Temperature max:</b>{j}</p>
-      <p> <b>Temperature min:</b>{r}</p>
+<p>Date {n}</p>
+      <p><b>Temperature:</b>{i}°C</p>
+       <p><b>Temperature max:</b>{j}°C</p>
+      <p> <b>Temperature min:</b>{r}°C</p>
       <p> <b>Wind speed:</b>{s}</p>
-       <p> <b>Wind Degree:</b>{t} </p>
+       <p> <b>Wind Degree:</b>{t}</p>
 
         Day 2:
 
-        <p><b>Temperature:</b>{c}</p>
-        <p><b>Temperature max:</b>{d}</p>
-       <p> <b>Temperature min:</b>{e}</p>
+
+        <p><b>Temperature:</b>{c}°C</p>
+        <p><b>Temperature max:</b>{d}°C</p>
+       <p> <b>Temperature min:</b>{e}°C</p>
        <p> <b>Wind speed:</b>{f}</p>
        <p> <b>Wind Degree:</b>{g} </p>
        Day 3:
-         <p><b>Temperature:</b>{k}</p>
-         <p><b>Temperature max:</b>{p}</p>
-        <p> <b>Temperature min:</b>{m}</p>
+         <p><b>Temperature:</b>{k} °C</p>
+         <p><b>Temperature max:</b>{p} °C</p>
+        <p> <b>Temperature min:</b>{m}°C</p>
         <p> <b>Wind speed:</b>{w}</p>
         <p> <b>Wind Degree:</b>{y} </p>
 
