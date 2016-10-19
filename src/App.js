@@ -19,7 +19,7 @@ var App = React.createClass({
 
 
 
-  Const  MyList =  this.state.data;{
+  Const  MyList =  this.state.data{
     var b =data.list[2];
 
     if(b)
